@@ -1,0 +1,72 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: "mynor-variable";
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* no scrolling.. */
+}
+
+/* main container: Splitting text and AI visualization */
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.text-section {
+  flex: 1;
+  max-width: 50%;
+  padding: 90px;
+  background: rgba(0, 0, 0, 0.8);
+  align-items: center;
+}
+
+.text-section p {
+  font-size: 25px;
+  line-height: 1.6;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 5.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+
+/* right section */
+#game-container {
+  flex: 1;
+  max-width: 50%;
+  width: 100%;
+  height: 100vh;
+  position: relative; /*  elements contained */
+  overflow: hidden; /* prevents overflow */
+  background-color: white;
+}
+
+@keyframes moveRight {
+  0%, 100% { left: -50px; }
+  50% { left: 100vw; }
+}
+
+@keyframes moveLeft {
+  0%, 100% { right: -50px; }
+  50% { right: 100vw; }
+}
+
+@media (max-width: 900px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .text-section, #game-container {
+      max-width: 100%;
+  }
+}
